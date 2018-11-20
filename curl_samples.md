@@ -1,0 +1,1 @@
+curl -X POST -H "Content-Type: application/json" -d '{ "servic": "add_coins", "channel": "Mobile/b","user": { "hash": "4C8648F2D0770D7A7ED877904BA58155" } }' http://localhost:7001/getuserquotes
