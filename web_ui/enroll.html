@@ -1,0 +1,54 @@
+<html>
+<link rel="stylesheet" type="text/css" href="/static/css/main.css">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="/static/js/enroll.js"></script>
+
+<header class="header sticky sticky--top js-header">
+
+  <div class="grid">
+
+    <nav class="navigation">
+      <ul class="navigation__list navigation__list--inline">
+          <li class="navigation__item"><a   href="#">Home</a></li>
+        <li class="navigation__item"><a   href="/enrollView"  class="is-active">Take Test</a></li>
+        <li class="navigation__item"><a   href="/admin">Admin</a></li>
+	   <li class="navigation__item"><a id="menu_item_starttest" href="/firstquestion"> </a></li> 
+	</ul>
+    </nav>
+
+  </div>
+
+</header>
+
+<body>
+
+ <div  class="grid">
+
+  <form class="main" >
+  <div class="Wrapper">
+    <div class="Input">
+      <input type="text" id="fname" class="Input-text" placeholder="Your first name"> </div>
+
+    <div class="Input">
+      <input type="text" id="lname" class="Input-text" placeholder="Your last  name">  </div>
+
+    <div class="Input">
+      <input type="text" id="mobile" class="Input-text" placeholder="Your first mobile number">  </div>
+
+    <div class="Input">
+      <input type="text" id="email" class="Input-text" placeholder="Your first email ID"> </div>
+   </div>
+   <br>
+  <nav class="navigation">
+      <ul class="navigation__list navigation__list--inline">
+          <li class="navigation__item">  <button id="start_test" class="is-active">Start Test</button></li> </ul>
+   </nav>
+ </div>
+  </form>
+</div>
+
+</body>
+
+</html>

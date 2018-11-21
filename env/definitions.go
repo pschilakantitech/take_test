@@ -1,5 +1,9 @@
 package env
 
+import (
+	"time"
+)
+
 // Application related variables...
 var (
 	AppName       string
@@ -15,4 +19,9 @@ var (
 	DBUser     string
 	DBPassword string
 	DBDatabase string
+)
+
+// test variables...
+var (
+	TestTime time.Duration
 )

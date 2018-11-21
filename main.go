@@ -19,8 +19,8 @@ import (
 var e *echo.Echo
 
 func main() {
-	sig, quit := make(chan os.Signal), make(chan bool)
-	signal.Notify(sig, syscall.SIGHUP, syscall.SIGTERM, syscall.SIGINT, syscall.SIGQUIT)
+	quit := make(chan os.Signal)
+	signal.Notify(quit, syscall.SIGHUP, syscall.SIGTERM, syscall.SIGINT, syscall.SIGQUIT)
 
 	e = echo.New()
 	e.Use(middleware.Secure())
@@ -38,6 +38,8 @@ func main() {
 
 	fmt.Println("Ready to serve the requests on the port", env.ServiceOnPort)
 	fmt.Println("Setup OK.\nRunning... ")
+	log.Info("Ready to serve the requests on the port", env.ServiceOnPort)
+	log.Info("Setup OK.\nRunning... ")
 
 	<-quit
 	ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
@@ -45,6 +47,7 @@ func main() {
 	if err := e.Shutdown(ctx); err != nil {
 		log.Info(err)
 	}
+
 	fmt.Println("shutting down the server... Done")
 
 	pidfile.Drop()

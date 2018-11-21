@@ -2,14 +2,15 @@ package main
 
 import (
 	"fmt"
+	"math/rand"
 	"os"
 	"path/filepath"
-
-	"github.com/pschilakantitech/take_test/pg_persist"
+	"time"
 
 	"github.com/pschilakantitech/avitar/log"
 	"github.com/pschilakantitech/avitar/pidfile"
 	"github.com/pschilakantitech/take_test/env"
+	"github.com/pschilakantitech/take_test/pg_persist"
 )
 
 func doCommonSetUp() {
@@ -25,10 +26,13 @@ func doCommonSetUp() {
 		Password: env.DBPassword,
 		Database: env.DBDatabase,
 	}
+	fmt.Println("env.DBPassword", env.DBPassword)
 	if err := pg_persist.ConnectToPGDB(cfg); err != nil {
 		abort(err)
 	}
 	fmt.Println("\nConnected to DB...", cfg.Database)
+
+	rand.Seed(time.Now().UTC().UnixNano())
 }
 
 const (

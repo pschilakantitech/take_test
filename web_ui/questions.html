@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<link rel="stylesheet" type="text/css" href="/static/css/main.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="/static/js/questions.js"></script>
+
+<header class="header sticky sticky--top js-header">
+
+  <div class="grid">
+
+    <nav class="navigation">
+      <ul class="navigation__list navigation__list--inline">
+       <li class="navigation__item">
+      <a href="#" class="is-active" >Taking test...</a></li>
+	 <li class="navigation__item"><a id="mitem_finshtest" href="/finishtest"></a></li>
+	</ul>
+    </nav>
+
+  </div>
+
+</header>
+
+<main class="main">
+
+<div id="question_div"  class="grid" >
+   <h3 id="question" >Question</h3>
+<table>
+   <tr> <td> 
+      <label class="control control--radio">A. 
+      <input type="radio" name="option"  value="A" />  </td>
+   <td>    
+      <p id="optionA"></p>
+      <div class="control__indicator"></div> 
+    </label>
+   </td> </tr>
+    
+  <tr> <td>  
+   <label class="control control--radio">B.
+      <input type="radio" name="option" value="B" /> </td>
+   <td>
+      <p id="optionB"></p>
+      <div class="control__indicator"></div>
+    </label>
+  </td></tr>
+
+<tr> <td>  
+    <label class="control control--radio">C.
+      <input type="radio" name="option" value="C" /> </td>
+  <td> <p id="optionC"></p>
+      <div class="control__indicator"></div>
+    </label>
+</td></tr>
+
+<tr> <td>  
+    <label class="control control--radio">D.
+      <input type="radio" name="option" value="D" />  </td>
+     <td>  <p id="optionD"></p>
+      <div class="control__indicator"></div>
+    </label>
+</td></tr>
+ </table> 
+<p hidden  id="question_id"></p>
+<p hidden id="ref_no"></p>
+<p hidden id="serial_no"></p>
+ <nav class="navigation">
+      <ul class="navigation__list navigation__list--inline">
+           <li class="navigation__item">  <button id="nextQuestion"  class="is-active">Next Question>></button></li> </ul>
+   </nav>
+</div>
+</main>
+</html>
