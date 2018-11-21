@@ -16,28 +16,28 @@ import (
 	"github.com/pschilakantitech/take_test/env"
 )
 
-var e *echo.Echo
-
 func main() {
-	sig, quit := make(chan os.Signal), make(chan bool)
-	signal.Notify(sig, syscall.SIGHUP, syscall.SIGTERM, syscall.SIGINT, syscall.SIGQUIT)
+	quit := make(chan os.Signal)
+	signal.Notify(quit, syscall.SIGHUP, syscall.SIGTERM, syscall.SIGINT, syscall.SIGQUIT)
 
-	e = echo.New()
+	e := echo.New()
 	e.Use(middleware.Secure())
 	e.Use(middleware.Recover())
 	e.Use(middleware.Logger())
 
-	assignHandlers()
+	assignHandlers(e)
 
 	fmt.Println("Starting echo.labstack.com server...")
 	go func() {
-		if err := e.Start(env.ServiceOnPort); err != nil {
+		if err := e.StartTLS(env.ServiceOnPort, "cert/cert.pem", "cert/key.pem"); err != nil {
 			log.Info("got error,shutting down the server", err)
 		}
 	}()
 
 	fmt.Println("Ready to serve the requests on the port", env.ServiceOnPort)
 	fmt.Println("Setup OK.\nRunning... ")
+	log.Info("Ready to serve the requests on the port", env.ServiceOnPort)
+	log.Info("Setup OK.\nRunning... ")
 
 	<-quit
 	ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
@@ -45,6 +45,7 @@ func main() {
 	if err := e.Shutdown(ctx); err != nil {
 		log.Info(err)
 	}
+
 	fmt.Println("shutting down the server... Done")
 
 	pidfile.Drop()

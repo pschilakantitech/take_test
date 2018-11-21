@@ -1,2 +1,0 @@
-mycryptocap_core 2018/11/20 16:48:08.545259 [ERROR] Couldn't ping postgre database (mycoinscap): dial tcp 127.0.0.1:5432: connect: connection refused
-mycryptocap_core 2018/11/20 18:32:47.146617 [ERROR] Couldn't ping postgre database (mycoinscap): pq: password authentication failed for user "postgres"

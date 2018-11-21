@@ -1,5 +1,9 @@
 package env
 
+import (
+	"time"
+)
+
 func init() {
 
 	AppName = "take_test"
@@ -9,8 +13,9 @@ func init() {
 
 	DBHost = "localhost"
 	DBPort = "5432"
-	DBUser = "take_test"
+	DBUser = "postgres"
 	DBPassword = "praveensc48"
 	DBDatabase = "take_test_db"
 
+	TestTime = time.Minute * 30
 }
