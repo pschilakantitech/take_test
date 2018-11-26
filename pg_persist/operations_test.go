@@ -9,8 +9,8 @@ func init() {
 	cfg := Config{
 		Host:     "localhost",
 		Port:     "5432",
-		User:     "postgres",
-		Password: "praveensc48",
+		User:     "",
+		Password: "",
 		Database: "take_test_db",
 	}
 	if err := ConnectToPGDB(cfg); err != nil {

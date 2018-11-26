@@ -13,8 +13,8 @@ func init() {
 
 	DBHost = "localhost"
 	DBPort = "5432"
-	DBUser = "postgres"
-	DBPassword = "praveensc48"
+	DBUser = ""
+	DBPassword = ""
 	DBDatabase = "take_test_db"
 
 	TestTime = time.Minute * 30
