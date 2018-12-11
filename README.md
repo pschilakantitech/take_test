@@ -25,8 +25,8 @@ go build
 ./take_test
  ```
 - Now application is runing at https://localhost:3000, cool! take the test
-- For easy access, i am  exporting my loacl development env to public url. please use below link
-- 
+- For easy access, exporting my loacl development env to public url. please use link http://b79306bf.ngrok.io/
+
 
 # work flow
 - Using the https://echo.labstack.com for  API framework.
