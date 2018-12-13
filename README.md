@@ -21,8 +21,8 @@ $ git clone git@github.com:pschilakantitech/take_test.git
 $ cd take_test
 $ make setup
 #Modify DB config details than run build cmd
-go build
-./take_test
+$ go build
+$ ./take_test
  ```
 - Now application is runing at https://localhost:3000, cool! take the test
 - For easy access, exporting my loacl development env to public url. please use link http://a63e142e.ngrok.io
